@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">contact_form</string>
+    <string name="nuwe_image">nuwe image</string>
+    <string name="info_text">Envíanos tus dudas, las contestaremos encantados</string>
+    <string name="info_title">INFORMACIÓN PERSONAL</string>
+    <string name="email">Correo Electrónico inválido</string>
+    <string name="phone">Teléfono inválido</string>
+    <string name="valide_fields">✅ Datos validados correctamente</string>
+
+</resources>
