@@ -1,22 +1,11 @@
 package net.vezk.contact_form
 
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.SpinnerAdapter
-import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import net.vezk.contact_form.databinding.ActivityMainBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-
+import retrofit2.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -29,13 +18,17 @@ class MainActivity : AppCompatActivity() {
         apiInterface.enqueue( object : Callback<List<data>>{
             override fun onResponse(call: Call<List<data>>?, response: Response<List<data>>?) {
                 if(response?.body() != null){
-                    val adapter = ArrayAdapter(this@MainActivity,android.R.layout.simple_spinner_item,response.body()!!)
+                    val originalList: List<data> = response.body()!!
+                    val newList: List<String> = originalList
+                        .sortedBy { it.name.common }
+                        .map { it.name.common }
+                    newList.sorted()
+                    val adapter = ArrayAdapter(this@MainActivity,android.R.layout.simple_spinner_item,newList)
                     binding.spCountry.adapter=adapter
                 }
             }
             override fun onFailure(call: Call<List<data>>?, t: Throwable?) {}
         })
-
 
         binding.vbAcept.setOnClickListener {
             if (!Validator.validText(1, binding.etEmail.text.toString())) binding.etEmail.error =
@@ -51,7 +44,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
 }
 
 
