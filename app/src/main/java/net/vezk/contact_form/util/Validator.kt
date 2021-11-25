@@ -1,7 +1,6 @@
-package net.vezk.contact_form
+package net.vezk.contact_form.util
 
-import java.util.regex.Matcher
-import java.util.regex.Pattern
+import java.util.regex.*
 
 class Validator {
     companion object {
@@ -14,7 +13,7 @@ class Validator {
 
         private fun typeValidation(typeText: Int): String {
             return when (typeText) {
-                1-> "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$"
+                1 -> "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$"
                 2 -> "^[+]?[0-9]{10,13}\$"
                 else -> ""
             }

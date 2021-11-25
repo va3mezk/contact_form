@@ -3,8 +3,14 @@
     <string name="nuwe_image">nuwe image</string>
     <string name="info_text">Envíanos tus dudas, las contestaremos encantados</string>
     <string name="info_title">INFORMACIÓN PERSONAL</string>
-    <string name="email">Correo Electrónico inválido</string>
-    <string name="phone">Teléfono inválido</string>
-    <string name="valide_fields">✅ Datos validados correctamente</string>
-
+    <string name="email_invalid">Correo Electrónico inválido</string>
+    <string name="phone_invalid">Teléfono inválido</string>
+    <string name="country">País*</string>
+    <string name="description">Descripción</string>
+    <string name="cancel">Cancelar</string>
+    <string name="send">Enviar</string>
+    <string name="validField">✅ Datos validados correctamente</string>
+    <string name="name">Nombre</string>
+    <string name="email">Correo Electrónico</string>
+    <string name="phone">Teléfono</string>
 </resources>
