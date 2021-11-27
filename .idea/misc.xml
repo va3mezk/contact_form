@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/custom_toast_layout.xml" value="0.32395833333333335" />
         <entry key="app/src/main/res/layout/fragment_contact.xml" value="0.32395833333333335" />
+        <entry key="app/src/main/res/layout/spinner_item.xml" value="0.32395833333333335" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.19375" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.19375" />
       </map>

@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 MainViewModelFactory(MainRepository(retrofitService))
             )[MainViewModel::class.java]
         viewModel.countryList.observe(this, Observer {
-            val adapter = ArrayAdapter(this@MainActivity, android.R.layout.simple_spinner_item, it)
+            val adapter = ArrayAdapter(this@MainActivity, R.layout.spinner_item, it)
             binding.spCountry.adapter = adapter
         })
         viewModel.getCountry()

@@ -8,15 +8,15 @@
     tools:context=".usecases.contact.MainActivity">
 
     <ImageView
-        android:id="@+id/iv_nuwe"
+        android:id="@+id/iv_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:contentDescription="@string/nuwe_image"
+        android:contentDescription="@string/app_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/nuwe" />
+        app:srcCompat="@drawable/app_logo" />
 
     <TextView
         android:id="@+id/tv_info"
@@ -26,11 +26,11 @@
         android:fontFamily="@font/montserrat"
         android:gravity="center"
         android:text="@string/info_text"
-        android:textColor="@color/secundary_main"
+        android:textColor="@color/titleColor"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_nuwe" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="313dp"
@@ -48,14 +48,14 @@
             android:background="@color/fragment">
 
             <TextView
-                android:id="@+id/tv_infopersonal"
+                android:id="@+id/tv_personal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/montserrat_bold"
                 android:text="@string/info_title"
-                android:textColor="@color/secundary_main"
+                android:textColor="@color/titleColor"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -75,12 +75,12 @@
                 android:inputType="textPersonName"
                 android:paddingStart="10dp"
                 tools:ignore="RtlSymmetry"
-                android:textColor="@color/secundary_main"
-                android:textColorHint="@color/prebackground"
+                android:textColor="@color/titleColor"
+                android:textColorHint="@color/strokeColor"
                 android:textSize="11sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_infopersonal" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_personal" />
 
             <EditText
                 android:id="@+id/et_email"
@@ -97,8 +97,8 @@
                 android:inputType="textEmailAddress"
                 android:paddingStart="10dp"
                 tools:ignore="RtlSymmetry"
-                android:textColor="@color/secundary_main"
-                android:textColorHint="@color/prebackground"
+                android:textColor="@color/titleColor"
+                android:textColorHint="@color/strokeColor"
                 android:textSize="11sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -119,8 +119,8 @@
                 android:inputType="phone"
                 android:paddingStart="10dp"
                 tools:ignore="RtlSymmetry"
-                android:textColor="@color/secundary_main"
-                android:textColorHint="@color/prebackground"
+                android:textColor="@color/titleColor"
+                android:textColorHint="@color/strokeColor"
                 android:textSize="11sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -140,8 +140,8 @@
                 android:inputType="text"
                 android:paddingStart="10dp"
                 tools:ignore="RtlSymmetry"
-                android:textColor="@color/secundary_main"
-                android:textColorHint="@color/prebackground"
+                android:textColor="@color/titleColor"
+                android:textColorHint="@color/strokeColor"
                 android:textSize="11sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -165,8 +165,8 @@
                 android:paddingStart="10dp"
                 tools:ignore="RtlSymmetry"
                 android:paddingTop="10dp"
-                android:textColor="@color/secundary_main"
-                android:textColorHint="@color/prebackground"
+                android:textColor="@color/titleColor"
+                android:textColorHint="@color/strokeColor"
                 android:textSize="11sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -183,7 +183,7 @@
                 android:fontFamily="@font/montserrat"
                 android:text="@string/cancel"
                 android:textAllCaps="false"
-                android:textColor="@color/button"
+                android:textColor="@color/buttonColor"
                 android:textSize="11sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/et_description" />
@@ -198,7 +198,7 @@
                 android:fontFamily="@font/montserrat"
                 android:text="@string/send"
                 android:textAllCaps="false"
-                android:textColor="@color/secundary_main"
+                android:textColor="@color/titleColor"
                 android:textSize="11sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/et_description" />

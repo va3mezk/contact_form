@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="fragment">#292E37</color>
-    <color name="secundary_main">#F0F0F0</color>
-    <color name="prebackground">#9E9E9E</color>
-    <color name="button">#569B51</color>
+    <color name="titleColor">#F0F0F0</color>
+    <color name="strokeColor">#9E9E9E</color>
+    <color name="buttonColor">#569B51</color>
 </resources>
