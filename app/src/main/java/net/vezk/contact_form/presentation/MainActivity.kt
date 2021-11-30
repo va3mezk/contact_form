@@ -1,4 +1,4 @@
-package net.vezk.contact_form.usecases.contact
+package net.vezk.contact_form.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,15 +6,16 @@ import android.widget.ArrayAdapter
 import androidx.lifecycle.*
 import com.google.android.material.snackbar.Snackbar
 import net.vezk.contact_form.*
+import net.vezk.contact_form.data.ApiInterface
 import net.vezk.contact_form.databinding.ActivityMainBinding
-import net.vezk.contact_form.provider.services.ApiInterface
-import net.vezk.contact_form.util.Validator
+import net.vezk.contact_form.domain.*
+import net.vezk.contact_form.utils.Validator
 import retrofit2.*
 
 /**
  * @author Victor Escalante
  * Noviembre 2021
- */
+ **/
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

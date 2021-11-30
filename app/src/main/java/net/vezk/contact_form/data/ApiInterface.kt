@@ -1,10 +1,22 @@
-package net.vezk.contact_form.provider.services
+@file:Suppress("SpellCheckingInspection", "SpellCheckingInspection", "SpellCheckingInspection",
+    "SpellCheckingInspection", "SpellCheckingInspection", "SpellCheckingInspection"
+)
 
-import net.vezk.contact_form.model.domain.Data
+package net.vezk.contact_form.data
+
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
+/**
+ * 🇪🇸
+ * Creación del servicio Retrofit https://restcountries.com/v3.1/all/ de donde
+ * consumiremos el nombre de los paises del mundo
+ *
+ * 🇺🇸
+ ** Creation of the Retrofit service https://restcountries.com/v3.1/all/ from where
+ * we will consume the name of the countries of the world
+ **/
 interface ApiInterface {
     @GET("/v3.1/all")
     fun getCountry(): Call<List<Data>>
