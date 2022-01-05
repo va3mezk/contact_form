@@ -14,8 +14,7 @@ import androidx.lifecycle.*
  * The ViewModel class that has the business logic and API call implementations.
  * In the ViewModel constructor, we need to pass the data repository to handle the data.
  **/
-class MainViewModelFactory constructor(private val repository: MainRepository) :
-    ViewModelProvider.Factory {
+class MainViewModelFactory constructor(private val repository: MainRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
             MainViewModel(this.repository) as T
