@@ -5,6 +5,7 @@
     package="net.vezk.contact_form">
     <uses-permission android:name="android.permission.INTERNET" />
     <application
+        android:name=".utils.MyAppication"
         android:allowBackup="false"
         android:fullBackupOnly="true"
         android:usesCleartextTraffic="false"

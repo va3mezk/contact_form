@@ -3,8 +3,10 @@ package net.vezk.contact_form.presentation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import androidx.activity.viewModels
 import androidx.lifecycle.*
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 import net.vezk.contact_form.*
 import net.vezk.contact_form.data.ApiInterface
 import net.vezk.contact_form.databinding.ActivityMainBinding
@@ -17,26 +19,21 @@ import retrofit2.*
  * Noviembre 2021
  **/
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var viewModel: MainViewModel
-    private val retrofitService = ApiInterface.create()
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel =
-            ViewModelProvider(
-                this,
-                MainViewModelFactory(MainRepository(retrofitService))
-            )[MainViewModel::class.java]
-        viewModel.countryList.observe(this, Observer {
+
+        viewModel.VMresponse.observe(this, Observer {
             val adapter = ArrayAdapter(this@MainActivity, R.layout.spinner_item, it)
             binding.spCountry.adapter = adapter
         })
-        viewModel.getCountry()
 
         binding.vbAccept.setOnClickListener {
             if (!Validator.validText(1, binding.etEmail.text.toString()))

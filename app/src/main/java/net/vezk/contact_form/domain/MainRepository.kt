@@ -9,6 +9,7 @@
 package net.vezk.contact_form.domain
 
 import net.vezk.contact_form.data.ApiInterface
+import javax.inject.Inject
 
 /**
  *s🇪🇸
@@ -21,6 +22,6 @@ import net.vezk.contact_form.data.ApiInterface
  * we need to pass the retrofit service instance to perform the network call.
  * We don’t need to handle the response here in the repository. That will be part of the ViewModel.
  **/
-class MainRepository constructor(private val retrofitService: ApiInterface) {
-    fun getCountry() = retrofitService.getCountry()
+class MainRepository @Inject constructor(private val apiInterface: ApiInterface){
+    suspend fun GetContrys()= apiInterface.GetCountry()
 }

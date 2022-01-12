@@ -2,9 +2,13 @@
 
 package net.vezk.contact_form.domain
 
+import android.util.Log
 import androidx.lifecycle.*
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import net.vezk.contact_form.data.Data
 import retrofit2.*
+import javax.inject.Inject
 
 /**
  *🇪🇸
@@ -20,25 +24,30 @@ import retrofit2.*
  * In the ViewModel [MainViewModel] constructor, we need to pass the data repository to handle the data.
  *
  **/
-class MainViewModel constructor(private val repository: MainRepository) : ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor(private val mainRepository: MainRepository):ViewModel(){
+    private val _response= MutableLiveData<List<String>>()
+    val VMresponse:LiveData<List<String>> = _response
 
-    val errorMessage = MutableLiveData<String>()
-    val countryList = MutableLiveData<List<String>>()
+    init {
+        GetAllContrys()
+    }
 
-    fun getCountry() {
-        val response = repository.getCountry()
-        response.enqueue(object : Callback<List<Data>> {
-            override fun onResponse(call: Call<List<Data>>, response: Response<List<Data>>) {
+    private fun GetAllContrys()= viewModelScope.launch {
+        mainRepository.GetContrys().let { response ->
+            if(response.isSuccessful){
+
                 val originalList: List<Data> = response.body()!!
                 val newList: List<String> = originalList
                     .sortedBy { it.name.common }
                     .map { it.name.common }
                 newList.sorted()
-                countryList.postValue(newList)
+                _response.postValue(newList)
+
             }
-            override fun onFailure(call: Call<List<Data>>, t: Throwable) {
-                errorMessage.postValue(t.message)
+            else{
+                Log.e("tag","error:${response.code()}")
             }
-        })
+        }
     }
 }

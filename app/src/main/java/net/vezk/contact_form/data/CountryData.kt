@@ -1,7 +1,5 @@
 package net.vezk.contact_form.data
 
-import com.google.gson.annotations.SerializedName
-
 /**
  * 🇪🇸
  * siendo este el formato del Json de entrada
@@ -16,11 +14,12 @@ import com.google.gson.annotations.SerializedName
  * a pair of data class [Data] and [Name] were created
  * **/
 data class Data(
-    @SerializedName("name") val name: Name
+    val name: Name
 )
 
 data class Name(
-    @SerializedName("common") val common: String
+    val common: String
 )
 
+class CountryResponse:ArrayList<Data>()
 
